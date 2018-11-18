@@ -23,12 +23,12 @@ class TestingPickle:
     #Testing the pickle file using it's constructor
     def __init__(self):
         
-        feFileName = 'FeatureEngineering.pkl'
+        feFileName = '../PickleFiles/FeatureEngineering.pkl'
         test1 = pickle.load(open(feFileName, mode='rb'))
 
-        linearModel = pickle.load(open("linearModel.pkl",'rb'))
-        randomModel = pickle.load(open("randomModel.pkl",'rb'))
-        stackedModel = pickle.load(open("stackModel.pkl",'rb'))
+        linearModel = pickle.load(open("../PickleFiles/linearModel.pkl",'rb'))
+        randomModel = pickle.load(open("../PickleFiles/randomModel.pkl",'rb'))
+        stackedModel = pickle.load(open("../PickleFiles/stackModel.pkl",'rb'))
 
 
         test =  test1.drop('temp_mean', 1)

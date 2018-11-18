@@ -35,8 +35,8 @@ class Visualizations:
 	    
 	#Reading Input Files
 	def read_files(self):
-	    self.train = pd.read_csv('train1.csv', engine='python')
-	    self.test = pd.read_csv('test1.csv', engine='python')
+	    self.train = pd.read_csv('../InputFiles/train1.csv', engine='python')
+	    self.test = pd.read_csv('../InputFiles/test1.csv', engine='python')
 	    self.data = self.train
 	    
 	#Scatter plot of various features
@@ -331,7 +331,7 @@ class StartClass:
         #Feature Engineering and Data Cleaning
         obj = FeatureEngineering(train, test)
         train, test = obj.getData()
-        feFileName = 'FeatureEngineering.pkl'
+        feFileName = '../PickleFiles/FeatureEngineering.pkl'
         pickle.dump(test, open(feFileName,'wb'))
         print('\n')
         
@@ -343,6 +343,6 @@ class StartClass:
         model_object.checkLinearRegression()
         model_object.checkRandomForest()
         model_object.stacking()
-        pickle.dump(model_object.linearModel, open("linearModel.pkl", 'wb'))
-        pickle.dump(model_object.randomModel, open("randomModel.pkl", 'wb'))
-        pickle.dump(model_object.stackedModel, open("stackModel.pkl", 'wb'))
+        pickle.dump(model_object.linearModel, open("../PickleFiles/linearModel.pkl", 'wb'))
+        pickle.dump(model_object.randomModel, open("../PickleFiles/randomModel.pkl", 'wb'))
+        pickle.dump(model_object.stackedModel, open("../PickleFiles/stackModel.pkl", 'wb'))
